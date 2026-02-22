@@ -1,6 +1,7 @@
 from mcp.server.fastmcp import FastMCP
 
 from finagent.tools.financial_data import financial_data as _financial_data
+from finagent.tools.market_news import market_news as _market_news
 
 mcp = FastMCP(
     "finagent",
@@ -28,6 +29,29 @@ def financial_data(
         JSON string with the requested data or an error object.
     """
     return _financial_data(ticker, data_type, period, limit)
+
+
+@mcp.tool()
+def market_news(
+    query: str,
+    ticker: str | None = None,
+    days_back: int = 7,
+) -> str:
+    """Fetch recent market news articles filtered by keyword.
+
+    Args:
+        query: Keyword to search for in article titles (e.g. "earnings",
+            "Federal Reserve", "AI").
+        ticker: Optional stock ticker to narrow results to a specific
+            company (e.g. "AAPL", "TSLA").  When omitted the search
+            scans broad-market index ETFs (SPY, QQQ, DIA).
+        days_back: Number of days of history to consider (default 7).
+
+    Returns:
+        JSON string containing a list of article objects with keys:
+        title, source, link, published, type, related_tickers.
+    """
+    return _market_news(query, ticker, days_back)
 
 
 def main():
