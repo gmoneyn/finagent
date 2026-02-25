@@ -1,17 +1,15 @@
 # FinAgent
 
-Financial analysis MCP server for any MCP-compatible AI app (Claude, ChatGPT, Cursor, Copilot, and more).
+Free financial analysis MCP server for any MCP-compatible AI app (Claude, ChatGPT, Cursor, Copilot, and more).
 
-Get live stock data, read SEC filings, search market news, and screen stocks — all from your AI assistant.
+Get live stock data and market news — all from your AI assistant.
 
 ## Tools
 
-| Tool | Tier | Description |
-|------|------|-------------|
-| `financial_data` | Free | Stock quotes, income statements, balance sheets, cash flow, analyst estimates, insider trades, key ratios |
-| `market_news` | Free | Financial news, analyst reactions, market sentiment |
-| `sec_filings` | Pro | SEC 10-K, 10-Q, 8-K filing reader with section extraction |
-| `stock_screener` | Pro | Screen stocks by P/E, market cap, revenue growth, sector, and more |
+| Tool | Description |
+|------|-------------|
+| `financial_data` | Stock quotes, income statements, balance sheets, cash flow, analyst estimates, insider trades, key ratios |
+| `market_news` | Financial news, analyst reactions, market sentiment |
 
 ## Quick Start
 
@@ -27,16 +25,11 @@ pip install finagent
 {
   "mcpServers": {
     "finagent": {
-      "command": "finagent",
-      "env": {
-        "FINAGENT_LICENSE_KEY": "your-key-here"
-      }
+      "command": "finagent"
     }
   }
 }
 ```
-
-The license key is optional — free tools work without it.
 
 ### Run as HTTP server
 
@@ -52,15 +45,12 @@ Ask your AI assistant:
 - "Show me Apple's last 4 quarters of revenue"
 - "Who's been buying or selling TSLA stock lately?"
 - "What are analysts saying about AMZN?"
-- "Pull the risk factors from Meta's latest 10-K" (Pro)
-- "Find me tech stocks with P/E under 20 and revenue growth over 10%" (Pro)
 
-## Get FinAgent Pro
+## Want More?
 
-Unlock SEC filings and stock screening at [mcp-marketplace.io/server/finagent](https://mcp-marketplace.io/server/finagent).
+**FinAgent Pro** adds SEC filing analysis and stock screening. Get it at [mcp-marketplace.io/server/finagent-pro](https://mcp-marketplace.io/server/finagent-pro).
 
 ## Data Sources
 
 - **Market data:** Yahoo Finance (free, real-time)
-- **SEC filings:** SEC EDGAR (free, official government data)
 - **News:** Yahoo Finance news feed (free)

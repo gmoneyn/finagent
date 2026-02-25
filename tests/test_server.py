@@ -2,7 +2,7 @@
 
 from finagent.server import mcp
 
-EXPECTED_TOOLS = {"financial_data", "market_news", "sec_filings", "stock_screener"}
+EXPECTED_TOOLS = {"financial_data", "market_news"}
 
 
 def test_server_has_all_tools():
