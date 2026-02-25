@@ -1,5 +1,5 @@
 [project]
-name = "finagent"
+name = "finagent-mcp"
 version = "0.1.0"
 description = "Free financial analysis MCP server — stock quotes, financials, and market news"
 readme = "README.md"

@@ -16,7 +16,7 @@ Get live stock data and market news — all from your AI assistant.
 ### Install
 
 ```bash
-pip install finagent
+pip install finagent-mcp
 ```
 
 ### Add to your MCP config
